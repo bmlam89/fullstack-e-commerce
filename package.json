@@ -1,0 +1,21 @@
+{
+  "name": "fullstack-e-commerce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@strapi/plugin-i18n": "^4.5.5",
+    "@strapi/plugin-users-permissions": "^4.5.5",
+    "@strapi/strapi": "^4.5.5",
+    "better-sqlite3": "^8.0.1",
+    "stripe": "^11.5.0"
+  }
+}
