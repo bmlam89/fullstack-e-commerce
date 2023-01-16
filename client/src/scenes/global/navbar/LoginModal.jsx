@@ -25,23 +25,10 @@ const style = {
 export default function TransitionsModal() {
   const dispatch = useDispatch();
   const isLoginOpen = useSelector((state) => state.auth.isLoginOpen);
-  const handleCallbackResponse = (response) => {
-    console.log(`Encoded JWT ID token ${response.credential}`);
-  }
-useEffect(() => { 
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: "11469275268-3rcca9k00jlujgicp0m8i2k06m1gd3pm.apps.googleusercontent.com",
-      callback: handleCallbackResponse
-    });
-  }, []);
-  google.accounts.id.renderButton(
-    document.getElementById("signInDiv"),
-    {
-      theme: "outline", 
-      size: "large"
-    }
-  )
+  const google = () => {
+    window.open("http://localhost:6000/auth/google", "_self");
+  };
+  
   return (
     <div>
       <Modal
@@ -58,11 +45,8 @@ useEffect(() => {
         <Fade in={isLoginOpen}>
           <Box sx={style}>
             <Box id="signInDiv" sx={{ mt: 2 }}>
-              <Button startIcon={<Facebook/>}>
-
-              </Button>
-              <Button startIcon={<Google/>}>
-                
+              <Button startIcon={<Google/>} onClick={google}>
+                Sign in with Google
               </Button>
             </Box>
             

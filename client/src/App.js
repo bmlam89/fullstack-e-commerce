@@ -7,6 +7,9 @@ import Footer from "./scenes/global/footer/Footer";
 
 
 function App() {
+  const fetchUser = () => {
+    
+  }
   /*const handleCallbackResponse = (response) => {
     console.log(`Encoded JWT ID token ${response.credential}`);
   }
